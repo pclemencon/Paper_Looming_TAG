@@ -20,18 +20,16 @@ Raw Data: >1Go files from COMSOL simulations (Folder $${\color{green}'Point3D'}$
 `Electrophysiology`
 
 ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `Data`
-- Raw data: .abf files. IN1 is the raw electrophysiological trace. IN4 tracks the motion of the piston. Spike times were extracted thanks to a thresholding operation and saved as .txt files.
-- A .csv file ($${\color{green}'ACFspikes.csv'}$$) indicates for each recording the associated cluster.
+- data_final.csv with the following structure
+| file | v | D | maxFR | timingFR | spikes | stimulus | repet | delta | m | S | pval | R2 | mu |
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 
 ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `Scripts`
 1) 1-influence_D_v
 - The script "1-Plots_and_stats_v2.ipynb" creates a layout for the regression plots in the figure 'electrophy + behaviour' of the paper (visualisation).
 
 2) momentum_threshold_analysis
-- The script "2-Extract_Fixed_Threshold.ipynb" extracts the valves times. Then, it computes for each file the maxFR and its peak + retrieve the putative momentum threshold. It returns a .csv file with the following structure
-
-| file | v | D | maxFR | timingFR | spikes | stimulus | repet | delta | m | S | pval | R2 | mu |
-| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+- The script "2-Extract_Fixed_Threshold.ipynb" extracts the valves times. Then, it computes for each file the maxFR and its peak + retrieve the putative momentum threshold. It returns a .csv file data_final.csv
 
 - The script "3-Analyse_Table_Threshold.ipynb" plots the computed threshold as a function of the delays
 
